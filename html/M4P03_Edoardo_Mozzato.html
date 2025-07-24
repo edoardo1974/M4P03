@@ -7,22 +7,35 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="main" ></div>
+    <!--
+        The <div> element with id="imageContainer" serves as a container for displaying images dynamically.
+    -->
+    <div id="imageContainer" ></div>
 
-    <script>
-        const main = document.getElementById('main');
-        let html = '';
+    <!--
+        This HTML snippet defines a table structure for displaying album information.
+        - The table header (<thead>) contains three columns:
+            1. "ID do álbum." for the album's unique identifier.
+            2. "Título do álbum" for the album's title.
+            3. "Imagem principal do álbum" for the album's main image.
+    -->
+    <table>
+        <thead>
+            <tr>
+                <th>ID do álbum.</th>
+                <th>Título do álbum</th>
+                <th>Imagem principal do álbum</th>
+            </tr>
+        </thead>
+        <tbody id="todoTableBody">
+        </tbody>
+    </table>
 
-    fetch('https://jsonplaceholder.typicode.com/todos')
-        .then(response => response.json())
-        .then(todos => {
-            todos.forEach(todo => {
-                console.log(todo);
-                html += `<div class="todo">${todo.title}</div>`;
-            });
-            main.innerHTML = html;
-        })
+    <!--
+        This script tag includes the external JavaScript file "script.js" located in the parent directory's "js" folder.
+    -->
+    <script src="..\js\script.js"></script>
         
-    </script>
+    
 </body>
 </html>
